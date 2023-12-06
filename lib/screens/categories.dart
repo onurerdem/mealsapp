@@ -21,6 +21,26 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Bir kategori seçin")),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Bir kategori seçin'),
+            ),
+            for (final category in categories)
+            ListTile(
+              title: Text(category.name),
+              onTap: () {
+                _selectCategory(context, category);
+              },
+            )
+          ],
+        ),
+      ),
       body: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

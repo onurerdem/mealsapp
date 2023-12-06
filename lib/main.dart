@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mealsapp/models/category.dart';
 import 'package:mealsapp/screens/categories.dart';
 
 final theme = ThemeData(
